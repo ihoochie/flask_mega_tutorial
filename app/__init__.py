@@ -12,5 +12,6 @@ migrate = Migrate(app, db)
 
 login = LoginManager(app)
 login.login_view = 'login'
+login.login_message = 'Введите логин и пароль, чтобы войти'
 
 from app import routes, models
