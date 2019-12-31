@@ -3,6 +3,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
 import logging
 import os
 from logging.handlers import SMTPHandler, RotatingFileHandler
@@ -16,6 +17,8 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 login.login_message = 'Введите логин и пароль, чтобы войти'
+
+mail = Mail(app)
 
 
 if not app.debug:
